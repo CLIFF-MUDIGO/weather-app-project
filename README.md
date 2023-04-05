@@ -1,5 +1,5 @@
-# Name of the Project
-WEATHER APP
+# WEATHER APP
+
 ### Author : Cliff Mudigo 4/4/2023
 ****
 ## Project Description
