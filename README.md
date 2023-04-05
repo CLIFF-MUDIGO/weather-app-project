@@ -27,7 +27,7 @@ HTML (Hypertext Markup Language) - used for creating the structure and content o
 CSS (Cascading Style Sheets) - used for styling and formatting the web page.
 JavaScript - used for adding interactivity to the web page, fetching data from the OpenWeatherMap API, and displaying the weather information to the user
 )
-* [Framework](Framework URL)
+
 * Text editor eg [Visual Studio Code](https://code.visualstudio.com/download)
 * [Testing Platform](Platform URL)
 
