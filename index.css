@@ -137,4 +137,21 @@ body{
     text-align: center;
     padding: 10px 0;
   }
-  
+  .fa-facebook,
+.fa-twitter,
+.fa-github {
+  font-size: 30px;
+  margin: 10px;
+  color: #0077B5;
+  border: 2px solid var(--blue-2);
+  border-radius: 50%;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.fa-facebook:hover,
+.fa-twitter:hover,
+.fa-github:hover {
+  background-color: var(--blue-1);
+  color: #fff;
+}
