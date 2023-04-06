@@ -6,10 +6,10 @@
 This weather app is a simple web application that allows users to enter a city name and get the current weather conditions for that location. The app uses the OpenWeatherMap API to fetch weather data in real-time and displays the temperature, weather description, weather icon, as well as the minimum and maximum temperatures for the selected city. The app has a clean and user-friendly interface with a search bar and a button to initiate the search. It also has a minimalist design with two animated shapes in the background.
 
 ## SCREENSHOT
-https://github.com/CLIFF-MUDIGO/weather-app-project/issues/1
+https://github.com/CLIFF-MUDIGO/weather-app-project/issues/2
 
 
-********
+
 ## SetUp Instruction
 To set up this weather app, follow these instructions:
 
@@ -46,12 +46,10 @@ JavaScript - used for adding interactivity to the web page, fetching data from t
 
 
 ## How To Run It
->  $ pip install -r requirements.txt
-To install all requirements that is vscode.
+-git clone the repo 
+-run it on the live server
 
-> $ python3 manage.py runserver
-Then run server with the above command
-*****
+
 ## Live Link
 Or you can access the web application directly via this [LINK.](link.com/)
 *****
