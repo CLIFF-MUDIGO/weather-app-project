@@ -20,16 +20,18 @@ Save the key.js file.
 4.Open the index.html file in a web browser to use the app.
 Note: Make sure you have an internet connection to fetch weather data from the OpenWeatherMap API.
 ### Requirements
-* [Lang](
+
 This weather app uses three languages:
 
 HTML (Hypertext Markup Language) - used for creating the structure and content of the web page.
 CSS (Cascading Style Sheets) - used for styling and formatting the web page.
 JavaScript - used for adding interactivity to the web page, fetching data from the OpenWeatherMap API, and displaying the weather information to the user
-)
+
+-external libraries 
+   - Font Awesome and Google Fonts.
 
 * Text editor eg [Visual Studio Code](https://code.visualstudio.com/download)
-* [Testing Platform](Platform URL)
+
 
 
 ### Getting Files
@@ -41,11 +43,11 @@ JavaScript - used for adding interactivity to the web page, fetching data from t
 - Add the changes and commit them (git commit -am "Improve App")
 - Push to the branch (git push origin improve-app)
 - Create a Pull request
-* Open the folder location on terminal and use the following command to run app:
+
 
 ## How To Run It
 >  $ pip install -r requirements.txt
-To install all requirements
+To install all requirements that is vscode.
 
 > $ python3 manage.py runserver
 Then run server with the above command
@@ -54,21 +56,21 @@ Then run server with the above command
 Or you can access the web application directly via this [LINK.](link.com/)
 *****
 ## Dependencies
-- Package Name
-- Package Name
-- Package Name
-- Package Name
+- Google
+- youtube
+- mozila
+- geekforgeeks
 *****
 ## Technologies Used
 1. HTML
-2. MdBootstrap
-3. HTML
-4. CSS
-5. JavaScript
+2. CSS
+3. JAVASCRIPT
+4. API
+
 *****
 ## Contact Information
-* Email : example@gmail.com
+* Email : cliffmudigo5@gmail.com
 *****
 ## [License](LICENSE)
 MIT License
-Copyright (c) YEAR Author
+Copyright (c) 2023 CLIFF MUDIGO
