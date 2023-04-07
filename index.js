@@ -54,25 +54,25 @@ let getWeather = () => {
         let tempMin = data.main.temp_min;
         let tempMax = data.main.temp_max;
         let currentTemp = data.main.temp;
+        
        
        
         result.innerHTML = `<h2>${cityName}</h2>
                             <h4 class="desc">${weatherDesc}</h4>
                             <img src="${weatherIconUrl}">
-                            <h1 id="temp">${currentTemp.toFixed(1)} &#176;</h1>
+                            <h1 id="temp">${currentTemp.toFixed(2)} &#176;C</h1>
                             <div class="temp-container">
                               <div>
                                 <h4 class="title">min</h4>
-                                <h4 class="temp">${tempMin.toFixed(1)}</h4>
+                                <h4 class="temp">${tempMin.toFixed(2)}&#176;C</h4>
                               </div>
                               <div>
                                 <h4 class="title">max</h4>
-                                <h4 class="temp">${tempMax.toFixed(1)}</h4>
+                                <h4 class="temp">${tempMax.toFixed(1)}&#176;C</h4>
                               </div>
                             </div>`;
         
-        // update the temperature display
-        displayTemperature(currentTemp);
+       
       })
       .catch(() =>{
         result.innerHTML =`<h3 class="msg">City not found</h3>`;
@@ -90,11 +90,11 @@ tempToggleBtn.addEventListener("click", () => {
     
     if (isCelsius) {
       currentTempFahrenheit = celsiusToFahrenheit(currentTempFahrenheit);
-      currentTempElement.innerHTML = `${currentTempFahrenheit} &#176;F`;
+      currentTempElement.innerHTML = `${currentTempFahrenheit.toFixed(2)} &#176;F`;
     } else {
       currentTempFahrenheit = fahrenheitToCelsius(currentTempFahrenheit);
-      currentTempElement.innerHTML = `${currentTempFahrenheit} &#176;C`;
+      currentTempElement.innerHTML = `${currentTempFahrenheit.toFixed(2)} &#176;C`;
     }
     
     isCelsius = !isCelsius;
-  });
+});
