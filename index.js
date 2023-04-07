@@ -21,9 +21,9 @@ function fahrenheitToCelsius(fahrenheit) {
 
 // function to display temperature
 function displayTemperature(tempCelsius) {
-    let temp = isCelsius ? tempCelsius : currentTempFahrenheit;
+    let temp = isCelsius ? tempCelsius : fahrenheitToCelsius(tempCelsius);
     let unit = isCelsius ? "&#176;C" : "&#176;F";
-    result.querySelector("#temp").innerHTML = `${temp} ${unit}`;
+    result.querySelector("#temp").innerHTML = `${temp.toFixed(2)} ${unit}`;
   }
 
 
@@ -59,24 +59,26 @@ let getWeather = () => {
         result.innerHTML = `<h2>${cityName}</h2>
                             <h4 class="desc">${weatherDesc}</h4>
                             <img src="${weatherIconUrl}">
-                            <h1>${currentTemp} &#176;</h1>
+                            <h1 id="temp">${currentTemp.toFixed(1)} &#176;</h1>
                             <div class="temp-container">
                               <div>
                                 <h4 class="title">min</h4>
-                                <h4 class="temp">${tempMin}</h4>
+                                <h4 class="temp">${tempMin.toFixed(1)}</h4>
                               </div>
                               <div>
                                 <h4 class="title">max</h4>
-                                <h4 class="temp">${tempMax}</h4>
+                                <h4 class="temp">${tempMax.toFixed(1)}</h4>
                               </div>
                             </div>`;
+        
+        // update the temperature display
+        displayTemperature(currentTemp);
       })
       .catch(() =>{
         result.innerHTML =`<h3 class="msg">City not found</h3>`;
       });
-  }
-
-};
+    }
+  };
 
 searchBtn.addEventListener("click", getWeather);
 window.addEventListener("load", getWeather);
