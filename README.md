@@ -52,7 +52,7 @@ JavaScript - used for adding interactivity to the web page, fetching data from t
 
 
 ## Live Link
-Or you can access the web application directly via this [LINK.](link.com/)
+Or you can access the web application directly via this [LINK.](https://cliff-mudigo.github.io/weather-app-project/)
 *****
 ## Dependencies
 - Google
