@@ -4,8 +4,8 @@ let searchBtn = document.getElementById("search-btn");
 let cityRef = document.getElementById("city");
 let tempToggleBtn = document.getElementById("temp-toggle-btn");
 
-let currentTempFahrenheit = 0;
 let isCelsius = true;
+
 
 // function to convert Celsius to Fahrenheit
 function celsiusToFahrenheit(celsius) {
@@ -21,11 +21,17 @@ function fahrenheitToCelsius(fahrenheit) {
 
 // function to display temperature
 function displayTemperature(tempCelsius) {
-    let temp = isCelsius ? tempCelsius : fahrenheitToCelsius(tempCelsius);
-    let unit = isCelsius ? "&#176;C" : "&#176;F";
-    result.querySelector("#temp").innerHTML = `${temp.toFixed(2)} ${unit}`;
-  }
+  let temp = isCelsius ? tempCelsius : celsiusToFahrenheit(tempCelsius);
+  let unit = isCelsius ? "&#176;C" : "&#176;F";
+  result.querySelector("#temp").innerHTML = `${temp.toFixed(2)} ${unit}`;
+}
 
+
+// function to handle the toggle button
+function handleTempToggle() {
+  isCelsius = !isCelsius;
+  displayTemperature(currentTempCelsius);
+}
 
 
 
@@ -54,23 +60,24 @@ let getWeather = () => {
         let tempMin = data.main.temp_min;
         let tempMax = data.main.temp_max;
         let currentTemp = data.main.temp;
+        currentTempCelsius = currentTemp;
         
        
        
         result.innerHTML = `<h2>${cityName}</h2>
-                            <h4 class="desc">${weatherDesc}</h4>
-                            <img src="${weatherIconUrl}">
-                            <h1 id="temp">${currentTemp.toFixed(2)} &#176;C</h1>
-                            <div class="temp-container">
-                              <div>
-                                <h4 class="title">min</h4>
-                                <h4 class="temp">${tempMin.toFixed(2)}&#176;C</h4>
-                              </div>
-                              <div>
-                                <h4 class="title">max</h4>
-                                <h4 class="temp">${tempMax.toFixed(1)}&#176;C</h4>
-                              </div>
-                            </div>`;
+        <h4 class="desc">${weatherDesc}</h4>
+        <img src="${weatherIconUrl}">
+        <h1 id="temp">${currentTempCelsius.toFixed(2)} &#176;C</h1>
+        <div class="temp-container">
+          <div>
+            <h4 class="title">min</h4>
+            <h4 class="temp">${tempMin.toFixed(2)}&#176;C</h4>
+          </div>
+          <div>
+            <h4 class="title">max</h4>
+            <h4 class="temp">${tempMax.toFixed(1)}&#176;C</h4>
+          </div>
+        </div>`;
         
        
       })
@@ -80,21 +87,14 @@ let getWeather = () => {
     }
   };
 
+
+
+
+
 searchBtn.addEventListener("click", getWeather);
-window.addEventListener("load", getWeather);
-
-
 
 tempToggleBtn.addEventListener("click", () => {
-    let currentTempElement = result.querySelector("#temp");
-    
-    if (isCelsius) {
-      currentTempFahrenheit = celsiusToFahrenheit(currentTempFahrenheit);
-      currentTempElement.innerHTML = `${currentTempFahrenheit.toFixed(2)} &#176;F`;
-    } else {
-      currentTempFahrenheit = fahrenheitToCelsius(currentTempFahrenheit);
-      currentTempElement.innerHTML = `${currentTempFahrenheit.toFixed(2)} &#176;C`;
-    }
-    
-    isCelsius = !isCelsius;
+  tempToggleBtn.classList.toggle("active");
+  isCelsius = !isCelsius; // toggle the temperature unit
+  displayTemperature(currentTempCelsius); // display the updated temperature
 });
